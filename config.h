@@ -21,17 +21,18 @@ static const char worddelimiters[] = " ";
 
 static char normfgcolor[] = "#ECEFF4";
 static char normbgcolor[] = "#3B4252";
-static char selfgcolor[]  = "#E5E9F0";
+static char normhlcolor[] = "#EBCB8B";
+static char selfgcolor[]  = "#EBCB8B";
 static char selbgcolor[]  = "#4C566A";
-static char hlcolor[] 	  = "#EBCB8B";
+static char selhlcolor[]  = "#E5E9F0";
 static char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
 	[SchemeNorm] 		= { normfgcolor, normbgcolor },
 	[SchemeSel]  		= { selfgcolor,  selbgcolor  },
-	[SchemeNormHighlight] 	= { hlcolor, normbgcolor },
-	[SchemeSelHighlight] 	= { hlcolor, selbgcolor },
+	[SchemeNormHighlight] 	= { normhlcolor, normbgcolor },
+	[SchemeSelHighlight] 	= { selhlcolor,	 selbgcolor },
 	[SchemeOut]  		= { "#000000",   "#00ffff" },
-	[SchemeOutHighlight]  	= { hlcolor,     "#00ffff" },
+	[SchemeOutHighlight]  	= { normhlcolor, "#00ffff" },
 };
 
 static const unsigned int alphas[SchemeLast][2] = {
@@ -48,11 +49,12 @@ static const unsigned int alphas[SchemeLast][2] = {
  */
 ResourcePref resources[] = {
 	{ "font",        STRING, &font },
-	{ "color15", 	 STRING, &normfgcolor },
+	{ "color12", 	 STRING, &normfgcolor },
 	{ "color0", 	 STRING, &normbgcolor },
-	{ "color7",  	 STRING, &selfgcolor },
-	{ "color8",  	 STRING, &selbgcolor },
-	{ "color3",  	 STRING, &hlcolor },
+	{ "color11",  	 STRING, &normhlcolor },
+	{ "color0",  	 STRING, &selfgcolor },
+	{ "color12",  	 STRING, &selbgcolor },
+	{ "color8",  	 STRING, &selhlcolor },
 	{ "prompt",      STRING, &prompt },
 };
 
